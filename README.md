@@ -115,7 +115,7 @@ Built with FastAPI, exposing the following endpoints
 ## Usage
 1. Clone the repository
 > git clone <https://github.com/Parkm465/HighValueCustomerPredictionAPI.git>  
-> cd <HighValueCustomerPredictionAPI>
+> cd HighValueCustomerPredictionAPI
 2. Install dependencies
 > pip install -r requirements.txt
 3. Run the FastAPI app
