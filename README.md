@@ -63,7 +63,7 @@ Multiple models were evaluated for classification
 | **Model** | **ROC-AUC** |
 |:---:|:---:|
 | Logistic Regression | 0.75 |
-| SVM | 0.76 |
+| **SVM** | 0.76 |
 | Random Forest | 0.71 |
 | Naive Bayes | 0.73 |
 | XGBoost | 0.70 |
@@ -71,7 +71,7 @@ Multiple models were evaluated for classification
 ### Performance (Binary Classification, ROC-AUC)
 | **Model** | **ROC-AUC** |
 |:---:|:---:|
-| Logistic Regression | 0.88 |
+| **Logistic Regression** | 0.89 |
 | SVM | 0.88 |
 | Random Forest | 0.87 |
 | Naive Bayes | 0.87 |
