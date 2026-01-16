@@ -2,14 +2,14 @@
 The project provides an API for predicting whether a customer is a high-value customer using historical transactional data. It combines data preprocessing, feature engineering, and supervised machine learning to identify customers likely to generate high future revenue.
 
 ## Table of Contents
-*  Project Overview
-*  Data
-*  Feature Engineering
-*  Modeling
-*  API Endpoints
-*  Business Insights
-*  Limitations
-*  Usage
+*  [Project Overview](#project-overview)
+*  [Data](#data)
+*  [Feature Engineering](#feature-engineering)
+*  [Modeling](#modeling)
+*  [API Endpoints](#api-endpoints)
+*  [Business Insights](#business-insights)
+*  [Limitations](#limitations)
+*  [Usage](#usage)
 
 ## Project Overview
 The API provides a simple interface to get predictions and high-value probabilities for given customer features
@@ -33,8 +33,7 @@ The Attributes include...
 1. Removed canceled invoices (`Invoices` starting with 'c')
 2. Removed rows with missing `Customer ID`
 3. Removed rows with negative `Price` and/or `Quantity` entries
-4. Converted `InvoiceDate` to datetime
-</br>
+4. Converted `InvoiceDate` to datetime  
 After cleaning: **805,625 transactions** across **41 countries**
 
 ## Feature Engineering
@@ -77,8 +76,8 @@ Multiple models were evaluated for classification
 | Random Forest | 0.87 |
 | Naive Bayes | 0.87 |
 | XGBoost | 0.85 |
-| KNN | 0.83 |
-</br> 
+| KNN | 0.83 |  
+
 * Due to the higher ROC-AUC values, Binary Classification was chosen to evaluate high value customers
 * Threshold for high-value prediction was set to 0.6
 * Logistic Regression was chosen for its interpretability, stability, and strong performance
@@ -86,24 +85,16 @@ Multiple models were evaluated for classification
 ## API Endpoints
 Built with FastAPI, exposing the following endpoints
 * GET/: Checks API health</br>
-    **Response:**  `{'message' : 'API is working'}`
+    * **Response:**  `{'message' : 'API is working'}`
 * GET/health: Health check endpoint</br>
-    **Response:**  `{'status' : 'ok'}`
+    * **Response:**  `{'status' : 'ok'}`
 * POST/predict: Predicts if customer is high value</br>
-    **Request Body (JSON):**  `{
-  "Recency": 10,
-  "Frequency": 5,
-  "Monetary": 200.0,
-  "spend_last_90_days": 50.0,
-  "SpendTrend": 10.0,
-  "AverageOrderValue": 40.0
-}` </be>
-    **Response:** `{
-  "high_value_probability": 0.72,
-  "prediction": "High Value",
-  "status": "success"
-}`
+    * **Request Body (JSON):**
+   `{"Recency": 10, "Frequency": 5, "Monetary": 200.0, "spend_last_90_days": 50.0, "SpendTrend": 10.0, "AverageOrderValue": 40.0}` 
+    * **Response:**
+ `{"high_value_probability": 0.72,"prediction": "High Value","status": "success"}`
 * Validation Error: Returns detailed field errors with status code 400
+
 ## Business Insights
 * **High Value Customers** tend to spend more recently, frequently, and in higher amounts
 * *Negative Spend Trend* indicates declining customer engagement --> a signal for reactivation campaigns
@@ -123,7 +114,8 @@ Built with FastAPI, exposing the following endpoints
 
 ## Usage
 1. Clone the repository
-> git clone <repo-url> </br> cd <repo-folder>
+> git clone <https://github.com/Parkm465/HighValueCustomerPredictionAPI.git>  
+> cd <HighValueCustomerPredictionAPI>
 2. Install dependencies
 > pip install -r requirements.txt
 3. Run the FastAPI app
